@@ -2,7 +2,7 @@ import croisiereRoute from "./routes/croisiereR.js";
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv"
-import db from './configuration.js';
+import db from './conf.js';
 
 
 const app = express();

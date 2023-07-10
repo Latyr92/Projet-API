@@ -1,6 +1,5 @@
-import db from '../../api/configuration.js';
+import db from '/Project-API/conf.js';
 import croisiere from "../models/croisiereM.js";
-
 
 export const createcroisiere = async (req,res)=>{
 
@@ -36,7 +35,6 @@ export const getcroisiere = async (req,res)=>{
   });
 
 }
-
 
 export const updatecroisiere = async (req,res)=>{
   const croisiereId = req.params.id;
