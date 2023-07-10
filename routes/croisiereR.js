@@ -1,5 +1,5 @@
 import express from 'express';
-import { createCroisiere,updateCroisiere,getCroisiere,getByID,deleteCroisiere} from '../controllers/croisiereC.js';
+import { createCroisiere,updateCroisiere,getByID,deleteCroisiere,getCroisiere} from '../controllers/croisiereC.js';
 
 const router =express.Router();
 

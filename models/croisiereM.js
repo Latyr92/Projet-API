@@ -1,4 +1,4 @@
-import client from '../conf.js';
+import client from '../configuration.js';
 
 const croisiere = {
   create: (nouveaucroisiere) => {

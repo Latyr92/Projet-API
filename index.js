@@ -2,7 +2,7 @@ import croisiereRoute from "./routes/croisiereR.js";
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv"
-import db from './conf.js';
+import db from './configuration.js';
 
 
 const app = express();
@@ -22,11 +22,11 @@ db.connect((err, client, release) => {
 //API ENDPOINT
 app.get('/',(req,res)=>res.status(200).send("Comment vas tu"));
 
-app.use("/api/croisiere",croisiereRoute);
+app.use("/croisiere",croisiereRoute);
 
 
 
-const port = 3000;
+const port = 4000;
 app.listen(port, () => {
   console.log(`Serveur en écoute sur le port ${port}`);
 });

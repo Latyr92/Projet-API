@@ -1,13 +1,13 @@
-import db from '/Project-API/conf.js';
+import db from '../configuration.js';
 import croisiere from "../models/croisiereM.js";
 
-export const createcroisiere = async (req,res)=>{
+export const createCroisiere = async (req,res)=>{
 
   const nouveaucroisiere = {
     title: req.body.title,
     dure: req.body.dure,
     prix: req.body.prix,
-    port: req.body.port,
+    port: req.body.port
   };
 
 
@@ -23,7 +23,7 @@ export const createcroisiere = async (req,res)=>{
 }
 
 
-export const getcroisiere = async (req,res)=>{
+export const getCroisiere = async (req,res)=>{
 
   db.query('SELECT * from croisiere  ', (err, result) => {
     if (err) {
@@ -36,7 +36,7 @@ export const getcroisiere = async (req,res)=>{
 
 }
 
-export const updatecroisiere = async (req,res)=>{
+export const updateCroisiere = async (req,res)=>{
   const croisiereId = req.params.id;
   const nouveaucroisiere = {
     title:req.body.title,
@@ -58,7 +58,7 @@ export const updatecroisiere = async (req,res)=>{
 }
 
 
-export const deletecroisiere = async (req,res)=>{
+export const deleteCroisiere = async (req,res)=>{
   const croisiereId = req.params.id;
   croisiere.delete(croisiereId)
     .then(() => {
