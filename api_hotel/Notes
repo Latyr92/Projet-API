@@ -1,5 +1,0 @@
-Quand on ne mets pas type module dans la package json, les importations se font avec :
-const ... =  require('...')
-Sinon on utilise import ... from '...'
-
-Pour pouvoir utiliser npm start, on rajoute dans package.json a l'objet script l'attribut "start " : "node index.js
