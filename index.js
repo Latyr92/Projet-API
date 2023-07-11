@@ -1,4 +1,5 @@
-import hotelRoute from "../api/routes/hotel.js";
+import hotelRoute from "./routes/hotel.js";
+import volRoute from "./routes/vol.js";
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv"
@@ -24,8 +25,8 @@ db.connect((err, client, release) => {
 //API ENDPOINT
 app.get('/',(req,res)=>res.status(200).send("Hello World"));
 
-app.use("/api/hotel",hotelRoute);
-
+app.use("/hotel",hotelRoute);
+app.use("/vol",hotelRoute);
 
 
 const port = 3000;
