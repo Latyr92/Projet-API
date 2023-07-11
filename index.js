@@ -1,5 +1,6 @@
 import hotelRoute from "./routes/hotel.js";
 import volRoute from "./routes/vol.js";
+import croisiereRoute from "./routes/croisiereR.js";
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv"
@@ -27,6 +28,7 @@ app.get('/',(req,res)=>res.status(200).send("Hello World"));
 
 app.use("/hotel",hotelRoute);
 app.use("/vol",hotelRoute);
+app.use("/croisiere",croisiereRoute);
 
 
 const port = 3000;
