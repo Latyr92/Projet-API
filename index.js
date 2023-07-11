@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import dotenv from "dotenv"
 import db from './configuration.js';
 
-
 const app = express();
 dotenv.config();
 app.use(bodyParser.json());

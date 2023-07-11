@@ -7,7 +7,7 @@ export const createVol = async (req,res)=>{
   const nouveauVol = {
     image: req.body.image,
     heure_depart: req.body.heure_depart,
-    heure_arrivee: req.body.heures_depart,
+    heure_arrivee: req.body.heure_arrivee,
     duree_vol: req.body.duree_vol,
     compagnie: req.body.compagnie,
     aeroport_depart: req.body.aeroport_depart,
@@ -45,15 +45,15 @@ export const getVol = async (req,res)=>{
 export const updateVol = async (req,res)=>{
   const volId = req.params.id;
   const nouveauVol = {
-     image: req.body.image,
-     heure_depart: req.body.heure_depart,
-     heure_arrivee: req.body.heures_depart,
-     duree_vol: req.body.duree_vol,
-     compagnie: req.body.compagnie,
-     aeroport_depart: req.body.aeroport_depart,
-     escale: req.body. escale,
-     aeroport_arrivee : req.body. aeroport_arrivee, 
-     prix: req.body.prix 
+                     image: req.body.image,
+                     heure_depart: req.body.heure_depart,
+                     heure_arrivee: req.body.heure_arrivee,
+                     duree_vol: req.body.duree_vol,
+                     compagnie: req.body.compagnie,
+                     aeroport_depart: req.body.aeroport_depart,
+                     escale: req.body.escale,
+                     aeroport_arrivee : req.body.aeroport_arrivee, 
+                     prix: req.body.prix 
   };
 
   Vol.update(volId,nouveauVol)

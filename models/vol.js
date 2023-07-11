@@ -4,7 +4,7 @@ const Vol = {
   create: (nouveauVol) => {
     const query = `
       INSERT INTO reservation_vol (image, heure_depart, heure_arrivee, duree_vol, compagnie, aeroport_depart, escale, aeroport_arrivee, prix)
-      VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)`;
+      VALUES ($1, $2, $3, $4, $5,$6,$7,$8,$9)`;
       
     const values = [
       nouveauVol.image,
@@ -16,6 +16,7 @@ const Vol = {
       nouveauVol.escale,
       nouveauVol.aeroport_arrivee,
       nouveauVol.prix
+      
     ];
 
     return client.query(query, values);
@@ -24,8 +25,8 @@ const Vol = {
   update: (volId, volModifie) => {
     const query = `
       UPDATE reservation_vol
-      SET image = $1, heure_depart = $2, heure_arrivee = $3, duree_vol = $4, compagnie = $5, aeroport_depart = $6, escale = $7, aeroport_arrivee = $8
-      WHERE id = $9`;
+      SET image = $1, heure_depart = $2, heure_arrivee = $3, duree_vol = $4, compagnie = $5, aeroport_depart = $6, escale = $7, aeroport_arrivee = $8, prix=$9
+      WHERE id = $10`;
       
     const values = [
                      volModifie.image,
