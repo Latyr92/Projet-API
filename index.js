@@ -26,7 +26,6 @@ app.get('/',(req,res)=>res.status(200).send("Hello World"));
 app.use("/hotel",hotelRoute);
 
 
-
 const port = 3000;
 app.listen(port, () => {
   console.log(`Serveur en écoute sur le port ${port}`);
