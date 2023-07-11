@@ -1,4 +1,4 @@
-import hotelRoute from "../api/routes/hotel.js";
+import hotelRoute from "./routes/hotel.js";
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from "dotenv"
