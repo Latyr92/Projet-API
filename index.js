@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import dotenv from "dotenv"
 import db from './configuration.js';
 
-
 const app = express();
 dotenv.config();
 app.use(bodyParser.json());
@@ -24,7 +23,7 @@ db.connect((err, client, release) => {
 //API ENDPOINT
 app.get('/',(req,res)=>res.status(200).send("Hello World"));
 
-app.use("/api/hotel",hotelRoute);
+app.use("/hotel",hotelRoute);
 
 
 
