@@ -3,15 +3,17 @@ import volRoute from "./routes/vol.js";
 import croisiereRoute from "./routes/croisiereR.js";
 import express from 'express';
 import bodyParser from 'body-parser';
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import db from './configuration.js';
-
+import cors from "cors";
 
 const app = express();
 dotenv.config();
+
+// Middleware
+app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Vérifier si la connexion à la base de données a réussi
 db.connect((err, client, release) => {
@@ -22,14 +24,12 @@ db.connect((err, client, release) => {
   client.release();
 });
 
+// API ENDPOINT
+app.get('/', (req, res) => res.status(200).send("Hello World"));
 
-//API ENDPOINT
-app.get('/',(req,res)=>res.status(200).send("Hello World"));
-
-app.use("/hotel",hotelRoute);
-app.use("/vol",hotelRoute);
-app.use("/croisiere",croisiereRoute);
-
+app.use("/hotel", hotelRoute);
+app.use("/vol", volRoute);
+app.use("/croisiere", croisiereRoute);
 
 const port = 3000;
 app.listen(port, () => {

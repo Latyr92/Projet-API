@@ -17,6 +17,37 @@ const Hotel = {
     return client.query(query, values);
   },
 
+  demande_modification: (nouveauHotel) => {
+    const query = `
+      INSERT INTO hotel_modification (nom, localisation, prix, note, photo, id_hotel)
+      VALUES ($1, $2, $3, $4, $5, $6)`;
+      
+    const values = [
+      nouveauHotel.nom,
+      nouveauHotel.localisation,
+      nouveauHotel.prix,
+      nouveauHotel.note,
+      nouveauHotel.photo,
+      nouveauHotel.id_hotel,
+    ];
+
+    return client.query(query, values);
+  },
+  
+  demande_suppression: (hotelId) => {
+    const query = `
+      INSERT INTO demande_suppression (type, id_element)
+      VALUES ($1, $2)`;
+      
+    const values = [
+      "hotel",
+       hotelId
+      
+    ];
+
+    return client.query(query, values);
+  },
+
   update: (hotelId, hotelModifie) => {
     const query = `
       UPDATE hotel
