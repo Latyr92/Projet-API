@@ -33,7 +33,7 @@ const Hotel = {
 
     return client.query(query, values);
   },
-  
+
   demande_suppression: (hotelId) => {
     const query = `
       INSERT INTO demande_suppression (type, id_element)
@@ -69,6 +69,29 @@ const Hotel = {
   delete: (hotelId) => {
     const query = `
     DELETE FROM hotel
+    WHERE id = $1`;
+    
+    const values = [
+      hotelId
+    ];
+
+    return client.query(query, values);
+  },
+
+  deleteDM: (hotelId) => {
+    const query = `
+    DELETE FROM hotel_modification
+    WHERE id = $1`;
+    
+    const values = [
+      hotelId
+    ];
+
+    return client.query(query, values);
+  },
+  deleteDS: (hotelId) => {
+    const query = `
+    DELETE FROM demande_suppression
     WHERE id = $1`;
     
     const values = [

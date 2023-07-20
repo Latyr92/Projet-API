@@ -133,6 +133,32 @@ export const deleteHotel = async (req,res)=>{
 
 }
 
+export const deleteDM = async (req,res)=>{
+  const hotelId = req.params.id;
+  Hotel.deleteDM(hotelId)
+    .then(() => {
+      res.json({ message: 'Demande supprimer avec succès' });
+    })
+    .catch((error) => {
+      console.error('Erreur lors de la suppression de l Hotel', error);
+      res.status(500).json({ error: 'Erreur lors de la création de l Hotel' });
+    });
+
+}
+
+export const deleteDS = async (req,res)=>{
+  const hotelId = req.params.id;
+  Hotel.deleteDS(hotelId)
+    .then(() => {
+      res.json({ message: 'Demande supprimer avec succès' });
+    })
+    .catch((error) => {
+      console.error('Erreur lors de la suppression de l Hotel', error);
+      res.status(500).json({ error: 'Erreur lors de la création de l Hotel' });
+    });
+
+}
+
 
 export const getByID = async (req,res)=>{
   const hotelId = req.params.id;

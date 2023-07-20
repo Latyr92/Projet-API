@@ -46,6 +46,17 @@ const Utilisateur = {
 
     return client.query(query, values);
   },
+
+  getByAll: () => {
+    const query = `
+      select * from utilisateur
+      `;
+      
+    
+
+    return client.query(query);
+  },
+  
   
   getByID: (utilisateurId) => {
     const query = `
@@ -59,6 +70,17 @@ const Utilisateur = {
     return client.query(query, values);
   },
 
+  getOne: (utilisateurId) => {
+    const query = `
+      select * from utilisateur
+      WHERE email = $1`;
+      
+    const values = [
+      utilisateurId
+    ];
+
+    return client.query(query, values);
+  },
 
 };
 

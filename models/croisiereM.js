@@ -57,6 +57,8 @@ const croisiere = {
     return client.query(query, values);
   },
 
+  
+
 
 };
 
